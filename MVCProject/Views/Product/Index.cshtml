@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MVCProject.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Products</h1>
+
+<h1>
+    Video Games
+</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reviews)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <img class="rounded-circle" src="@item.Image" alt="@item.Name" style="max-width:140px">
+            </td>
+            <td>
+                    @if (item.Reviews != null && item.Reviews.Any())
+                    {
+                        <ul>
+                            @foreach (var review in item.Reviews)
+                            {
+                                <li>@review.Name - @review.Content</li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No reviews available for this product.</p>
+                    }
+                    
+            </td>
+            <td>
+                
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-area="" asp-controller="Review" asp-action="Index">Create New Review</a>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<style>
+    body {
+        margin-bottom: 60px;
+        background-image: url(https://th.bing.com/th/id/R.573eaccb9bd5316afb9e8349510955ce?rik=es2n9P7iqv1mxg&pid=ImgRaw&r=0);
+        font-size: 25px;
+        font-weight: bold
+    }
+    .table{
+        color: white;
+        -webkit-text-stroke: 1px black;
+        text-shadow: 0px 1px 4px #23430C;
+        
+        background-color: grey;
+       
+        background-position: center;
+        background-repeat:no-repeat:
+    }
+
+    li::marker {
+        color: black;
+    }
+
+    h1 {
+        font-weight: bold;
+    }
+
+</style>

@@ -1,0 +1,65 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  
+}
+body {
+    margin-bottom: 60px;
+    
+}
+#Name {
+    display: grid;
+    grid-row: 3;
+    font-size: 40px;
+    font-weight: bold
+}
+
+
+
+.col-sm-10 {
+    font-size: 27px;
+}
+
+.img {
+    border-radius: 25px;
+    height: 200px;
+    justify-content: center;
+    display: grid;
+    grid-row: 2;
+    margin-left: 505px;
+}
+
+hr.line {
+    height: 3px;
+    border-width: 0;
+    color: blue;
+    background-color: black;
+}
+
+h1 {
+    display: grid;
+    grid-row: 1;
+}
+
+.description {
+}
+
+footer {
+    display: grid;
+    grid-row: 5;
+}
+

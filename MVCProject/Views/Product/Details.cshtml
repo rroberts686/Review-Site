@@ -1,0 +1,49 @@
+﻿@model MVCProject.Models.ProductModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Description</h1>
+
+<div class="body">
+    <dl class="row">
+        <hr class="line"></hr>
+
+        <dt class="col-sm-2">
+            <img class ="img" src="@Model.Image" alt="@Model.Name" style="max-width:400px">
+
+        </dt>
+        <dd class="col-sm-50">
+
+            <div id="Name">
+                @Html.DisplayFor(model => model.Name)
+            </div>
+        </dd>
+
+
+        <dt class="descrpition">
+
+        <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt />
+
+    </dl>
+</div>
+<div id="Footer">
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+    <a asp-action="Index">Back to List</a>
+</div>
+<style>
+    body {
+        margin-bottom: 60px;
+        background-image: url(https://wallup.net/wp-content/uploads/2016/01/37561-video_games-Dark_Souls-knights-Black_Iron_Tarkus.jpg);
+        background-position: center;
+        color: white;
+        font-size: 25px;
+        font-weight: bold
+    }
+
+</style>
+

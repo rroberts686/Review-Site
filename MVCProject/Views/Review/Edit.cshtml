@@ -1,0 +1,52 @@
+﻿@model MVCProject.Models.ReviewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Reviews</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product" class="control-label"></label>
+                <input asp-for="NewProductReview" value="@Model.Product.Name " class="form-control"></input>
+                <span asp-validation-for="NewProductReview" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<style>
+    body {
+        margin-bottom: 60px;
+        background-image: url(https://th.bing.com/th/id/R.26894ef7721651f9b0c4442d25bd7783?rik=QnPZSib%2bVbc6Sg&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f178521-Crysis-video_games-Crysis_3.jpg&ehk=Dd0%2bKLpQUfareHANTypK48oXv870MixDI08hyrla7DM%3d&risl=&pid=ImgRaw&r=0);
+        background-image: center;
+        color:black;
+        font-size: 25px;
+        font-weight: bold
+    }
+</style>
+
+

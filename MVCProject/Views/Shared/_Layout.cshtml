@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MVCProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/MVCProject.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="headtop">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm text-black bg-transparent  box-shadow mb-3">
+            <div class="container-fluid">
+                <h1 class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">JVR Gaming</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <h3 class="nav-item">
+                            <a class="nav-link text-black" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </h3>
+                        <h3 class="nav-item">
+                            <a class="nav-link text-black" asp-area="" asp-controller="product" asp-action="Index">Products</a>
+                        </h3>
+                        <h3 class="nav-item">
+                            <a class="nav-link text-black" asp-area="" asp-controller="review" asp-action="Index">Reviews</a>
+                        </h3>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class=" footer text-muted">
+        <div class="container">
+            &copy; 2023 - MVCProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+<style>
+    .footer  {
+        background-color: black;
+        color: white;
+    }
+</style>
